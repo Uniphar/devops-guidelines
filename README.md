@@ -105,9 +105,12 @@ function Initialize-Dns
 ```
 
 - We use `-WhatIf` to test the template, and that is then plugged into CI builds.
-- During the `-WhatIf` branch we create a random _GUID_ Resource Group to use the same deployment type that we then delete after the test is complete.
-- We always deploy in `Incremental` outside special development loops to use the idempotency mechanism built into the Azure ARM API.
-- What we call deployment blocks are wrapped into functions -> Think of a deployment block as a unit that goes through a single CD pipelines across multiple stages.
+- During the `-WhatIf` branch we create a random _GUID_ Resource Group to use the
+  same deployment type that we then delete after the test is complete.
+- We always deploy in `Incremental` outside special development loops to use the
+  idempotency mechanism built into the Azure ARM API.
+- What we call deployment blocks are wrapped into functions -> Think of a deployment
+  block as a unit that goes through a single CD pipelines across multiple stages.
 
 ### Azure commands
 
