@@ -1,7 +1,7 @@
 # Devops Guidelines
 
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
-The technical stack and tooling is around that of expected for an Azure
+The technical stack and tooling is around that expected for an Azure
 execution and we do not use any cloud agnostic tools like Terraform because we
 design infrastructure specifically to maximize performance and cost optimization
 in Azure.
