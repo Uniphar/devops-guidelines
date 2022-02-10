@@ -247,8 +247,8 @@ of VSCode extensions that we use often.
 
 ### Package Managers
 
-Most CLIs and aditional tools like bicep, we update them through package managers, and we aim at
-keeping everything updated to the latest at all times.
+Most CLIs and aditional tools like bicep, we update them through package managers,
+and we aim at keeping everything updated to the latest at all times.
 
 One package manager that supports most of our toolset is [chocolatey](https://chocolatey.org/).
 But others like [scoop](https://scoop.sh/) or [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
