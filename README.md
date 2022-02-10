@@ -15,13 +15,17 @@ contain final DevOps infrastructure as code.
 
 ### Code
 
-We use a mix of [PowerShell](https://github.com/PowerShell/PowerShell) using the
-[Az](https://www.powershellgallery.com/packages/Az/7.2.0) modules combined with
+We use a mix of [PowerShell Core](https://github.com/PowerShell/PowerShell) using
+the [Az](https://www.powershellgallery.com/packages/Az/7.2.0) modules combined with
 [bicep](https://github.com/Azure/bicep) for the actual resource definition in
 Azure. We're no longer doing anything with
 [ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)
 directly, instead everything is declared in the newer and much more readable
 [bicep](https://github.com/Azure/bicep) templates.
+
+Both PowerShell Core and bicep are on the latest versions. We continuously update
+our development environments to match the rapid pace of updates that are done on
+hosted build agents.
 
 In the cases where we're developing automation against either Azure DevOps or
 Github we use their corresponsing CLIs called through PowerShell code:
@@ -240,6 +244,15 @@ of VSCode extensions that we use often.
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+
+### Package Managers
+
+Most CLIs and aditional tools like bicep, we update them through package managers, and we aim at
+keeping everything updated to the latest at all times.
+
+One package manager that supports most of our toolset is [chocolatey](https://chocolatey.org/).
+But others like [scoop](https://scoop.sh/) or [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
+can also be used. They just facilitate keeping things updated very easily.
 
 ### CLIs
 
