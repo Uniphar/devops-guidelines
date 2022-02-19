@@ -164,7 +164,7 @@ to deploying to early environments is quite fast.
 
 ### Observe everything
 
-We use two main telemetry platforms:
+We use the following telemetry platforms:
 
 - [Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
 - [Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
