@@ -332,3 +332,15 @@ Once you have WSL2 installed, you can run the following command on a powershell
   ![Use WSL2](./img/Docker-Desktop-WSL2-1.png)
   ![Enable Integration with my default WSL Distro & additional...](./img/Docker-Desktop-WSL2-2.png)
   ![Enable Kubernetes](./img/Docker-Desktop-K8s.png)
+
+## Utils
+
+### Kubernetes
+
+#### Kubectl Autocomplete
+
+To enable autocomplete for kubectl, run the following command:
+
+```powershell
+kubectl completion powershell | Out-String | Invoke-Expression
+```
