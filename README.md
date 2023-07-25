@@ -289,7 +289,7 @@ After installation, restart your PowerShell session (run as administrator) and r
   ```powershell
   choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli
   ```
-Additionally you can install VS Code (replace `vscode` with `vscode-insiders` for the Insiders version) and the following extensions:
+Additionally you can install VS Code and the following extensions:
 
   ```powershell
   choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one
