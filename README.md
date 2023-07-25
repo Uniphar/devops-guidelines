@@ -182,9 +182,9 @@ paging functionality on alert triggers.
 
 ### Deviation monitors over static monitors
 
-We alert mostly on deviation alerts, either __static deviation alerts__:
+We alert mostly on deviation alerts, either **static deviation alerts**:
 _Is the error rate higher then 5%?_ or
-__dynamic threshold alerts__ for events that don't necessarly need actions right
+**dynamic threshold alerts** for events that don't necessarly need actions right
 away:
 
 ![Dynamic Threshold](./img/threshold-picture-8bit.png)
@@ -195,7 +195,7 @@ Devops code is deployed through [github actions](https://docs.github.com/en/acti
 using yaml workflows. We run a CI workflow that mostly calls initialization
 blocks using `-WhatIf`, that internally run sets of `Test-AzResourceGroupDeployment`.
 
-> __TODO: Example pipeline__
+> **TODO: Example pipeline**
 
 ## DevOps project structure
 
@@ -267,28 +267,32 @@ We use the following CLIs:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
 - [Helm](https://helm.sh/docs/intro/install/)
 
-
 ### Quick Setup
 
 If you want to go with the reccommended setup follow the next steps.
 
 ## Install Powershell
 
-Start by installing [Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/install), select your OS and follow the instructions.
+Start by installing
+[Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/install),
+ select your OS and follow the instructions.
 
 ## Install Chocolatey
 
-Install [Chocolatey](https://chocolatey.org/install) by running the following command in an elevated PowerShell (run as administrator) window:
+Install [Chocolatey](https://chocolatey.org/install) by running the following command
+ in an elevated PowerShell (run as administrator) window:
 
-```powershell 
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-After installation, restart your PowerShell session (run as administrator) and run the following command.
+After installation, restart your PowerShell session (run as administrator) and run
+ the following command.
   
   ```powershell
   choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli
   ```
+
 Additionally you can install VS Code and the following extensions:
 
   ```powershell
@@ -297,7 +301,8 @@ Additionally you can install VS Code and the following extensions:
 
 ## Install Code Extensions
 
-Some extensions are not available through Chocolatey, so you need to install them manually:
+Some extensions are not available through Chocolatey, so you need to install
+ them manually:
 
 ```powershell
 code --install-extension ms-azuretools.vscode-bicep
@@ -307,12 +312,15 @@ code --install-extension vsls-contrib.codetour
 
 ## Windows Subsystem for Linux
 
-Follow the steps on [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL2.
+Follow the steps on
+ [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+  to install WSL2.
 If you're not used to a distribution, one of the most used is Ubuntu.
 
 ## Docker Desktop
 
-Once you have WSL2 installed, you can run the following command on a powershell terminal with elevated privileges:
+Once you have WSL2 installed, you can run the following command on a powershell
+ terminal with elevated privileges:
   
   ```powershell
   choco install docker-desktop
