@@ -12,7 +12,8 @@ reference to what is expected to be seen on the internal repositories that
 contain final DevOps infrastructure as code.
 
 **Note**
-If Installing from scratch, you might want to check the [Quick Setup](#quick-setup) guide
+If Installing from scratch, you might want to check the [Quick Setup](#quick-setup)
+ guide
 
 ## Technology Stack
 
