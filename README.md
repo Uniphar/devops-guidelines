@@ -11,12 +11,15 @@ principles to we use in DevOps within the Uniphar group and should be used as a
 reference to what is expected to be seen on the internal repositories that
 contain final DevOps infrastructure as code.
 
+**Note**
+If Installing from scratch, you might want to check the [Quick Setup](#quick-setup) guide
+
 ## Technology Stack
 
 ### Code
 
 We use a mix of [PowerShell Core](https://github.com/PowerShell/PowerShell) using
-the [Az](https://www.powershellgallery.com/packages/Az/7.2.0) modules combined with
+the [Az](https://www.powershellgallery.com/packages/Az/10.1.0) modules combined with
 [bicep](https://github.com/Azure/bicep) for the actual resource definition in
 Azure. We're no longer doing anything with
 [ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)
@@ -263,3 +266,60 @@ We use the following CLIs:
 - [Az Azure DevOps CLI](https://github.com/Azure/azure-devops-cli-extension)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
 - [Helm](https://helm.sh/docs/intro/install/)
+
+
+### Quick Setup
+
+If you want to go with the reccommended setup follow the next steps.
+
+## Install Powershell
+
+Start by installing [Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/install), select your OS and follow the instructions.
+
+## Install Chocolatey
+
+Install [Chocolatey](https://chocolatey.org/install) by running the following command in an elevated PowerShell (run as administrator) window:
+
+```powershell 
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+After installation, restart your PowerShell session (run as administrator) and run the following command.
+  
+  ```powershell
+  choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli
+  ```
+Additionally you can install VS Code (replace `vscode` with `vscode-insiders` for the Insiders version) and the following extensions:
+
+  ```powershell
+  choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one
+  ```
+
+## Install Code Extensions
+
+Some extensions are not available through Chocolatey, so you need to install them manually:
+
+```powershell
+code --install-extension ms-azuretools.vscode-bicep
+code --install-extension mindaro.mindaro
+code --install-extension vsls-contrib.codetour
+```
+
+## Windows Subsystem for Linux
+
+Follow the steps on [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to install WSL2.
+If you're not used to a distribution, one of the most used is Ubuntu.
+
+## Docker Desktop
+
+Once you have WSL2 installed, you can run the following command on a powershell terminal with elevated privileges:
+  
+  ```powershell
+  choco install docker-desktop
+  ```
+
+  After Installation, Ensure the following options are selected
+
+  ![Use WSL2](./img/Docker-Desktop-WSL2-1.png)
+  ![Enable Integration with my default WSL Distro & additional...](./img/Docker-Desktop-WSL2-2.png)
+  ![Enable Kubernetes](./img/Docker-Desktop-K8s.png)
