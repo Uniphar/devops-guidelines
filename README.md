@@ -268,14 +268,14 @@ We use the following CLIs:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
 - [Helm](https://helm.sh/docs/intro/install/)
 
-### Quick Setup
+# Quick Setup
 
 If you want to go with the reccommended setup follow the next steps.
 
 ## Install Powershell
 
 Start by installing
-[Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/install),
+[Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell),
  select your OS and follow the instructions.
 
 ## Install Chocolatey
@@ -314,7 +314,7 @@ code --install-extension vsls-contrib.codetour
 ## Windows Subsystem for Linux
 
 Follow the steps on
- [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+ [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell)
   to install WSL2.
 If you're not used to a distribution, one of the most used is Ubuntu.
 
