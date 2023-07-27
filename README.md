@@ -268,7 +268,7 @@ We use the following CLIs:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
 - [Helm](https://helm.sh/docs/intro/install/)
 
-# Quick Setup
+## Quick Setup
 
 If you want to go with the reccommended setup follow the next steps.
 
