@@ -291,7 +291,7 @@ After installation, restart your PowerShell session (run as administrator) and r
  the following command.
   
   ```powershell
-  choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli
+  choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli azure-kubelogin
   ```
 
 Additionally you can install VS Code and the following extensions:
