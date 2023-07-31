@@ -297,7 +297,7 @@ After installation, restart your PowerShell session (run as administrator) and r
 Additionally you can install VS Code and the following extensions:
 
   ```powershell
-  choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one
+  choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one platyps
   ```
 
 ## Install Code Extensions
