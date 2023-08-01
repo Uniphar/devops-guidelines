@@ -333,6 +333,15 @@ Once you have WSL2 installed, you can run the following command on a powershell
   ![Enable Integration with my default WSL Distro & additional...](./img/Docker-Desktop-WSL2-2.png)
   ![Enable Kubernetes](./img/Docker-Desktop-K8s.png)
 
+## Open SSH
+
+To enable OpenSSH on Windows, run the following command on a powershell terminal
+ with elevated privileges:
+
+```powershell
+Get-WindowsCapability -Online | Where-Object Name -like ‘OpenSSH.Server*’ | Add-WindowsCapability –Online
+```
+
 ## Utils
 
 ### Kubernetes
