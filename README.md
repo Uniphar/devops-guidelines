@@ -336,11 +336,30 @@ Once you have WSL2 installed, you can run the following command on a powershell
 ## Open SSH
 
 To enable OpenSSH on Windows, run the following command on a powershell terminal
- with elevated privileges:
+ with elevated privileges to check if it's already installed:
 
 ```powershell
-Get-WindowsCapability -Online | Where-Object Name -like ‘OpenSSH.Server*’ | Add-WindowsCapability –Online
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+
+# Install the OpenSSH Client
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+
+# Install the OpenSSH Server
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
+
+To Uninstall
+
+```powershell
+# Uninstall the OpenSSH Client
+Remove-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+
+# Uninstall the OpenSSH Server
+Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+```
+
+refer to [Get started with OpenSSH for Windows](https://learn.microsoft.!com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
+for more details
 
 ## Utils
 
