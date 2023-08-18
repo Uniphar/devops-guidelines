@@ -13,7 +13,7 @@ contain final DevOps infrastructure as code.
 
 **Note**
 If Installing from scratch, you might want to check the [Quick Setup](#quick-setup)
- guide
+guide
 
 ## Technology Stack
 
@@ -276,34 +276,34 @@ If you want to go with the reccommended setup follow the next steps.
 
 Start by installing
 [Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell),
- select your OS and follow the instructions.
+select your OS and follow the instructions.
 
 ## Install Chocolatey
 
 Install [Chocolatey](https://chocolatey.org/install) by running the following command
- in an elevated PowerShell (run as administrator) window:
+in an elevated PowerShell (run as administrator) window:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 After installation, restart your PowerShell session (run as administrator) and run
- the following command.
-  
-  ```powershell
-  choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli azure-kubelogin
-  ```
+the following command.
+
+```powershell
+choco install az.powershell azure-cli bicep gh git minikube kubernetes-helm NSwagStudio nvm yarn kubernetes-cli azure-kubelogin
+```
 
 Additionally you can install VS Code and the following extensions:
 
-  ```powershell
-  choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one platyps
-  ```
+```powershell
+choco install vscode vscode-powershell vscode-docker vscode-markdownlint vscode-yaml vscode-kubernetes-tools vscode-pull-request-github vscode-vsliveshare vscode-gitlens vscode-csharp vscode-markdown-all-in-one platyps
+```
 
 ## Install Code Extensions
 
 Some extensions are not available through Chocolatey, so you need to install
- them manually:
+them manually:
 
 ```powershell
 code --install-extension ms-azuretools.vscode-bicep
@@ -314,29 +314,29 @@ code --install-extension vsls-contrib.codetour
 ## Windows Subsystem for Linux
 
 Follow the steps on
- [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell)
-  to install WSL2.
+[Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell)
+to install WSL2.
 If you're not used to a distribution, one of the most used is Ubuntu.
 
 ## Docker Desktop
 
 Once you have WSL2 installed, you can run the following command on a powershell
- terminal with elevated privileges:
-  
-  ```powershell
-  choco install docker-desktop
-  ```
+terminal with elevated privileges:
 
-  After Installation, Ensure the following options are selected
+```powershell
+choco install docker-desktop
+```
 
-  ![Use WSL2](./img/Docker-Desktop-WSL2-1.png)
-  ![Enable Integration with my default WSL Distro & additional...](./img/Docker-Desktop-WSL2-2.png)
-  ![Enable Kubernetes](./img/Docker-Desktop-K8s.png)
+After Installation, Ensure the following options are selected
+
+![Use WSL2](./img/Docker-Desktop-WSL2-1.png)
+![Enable Integration with my default WSL Distro & additional...](./img/Docker-Desktop-WSL2-2.png)
+![Enable Kubernetes](./img/Docker-Desktop-K8s.png)
 
 ## Open SSH
 
 To enable OpenSSH on Windows, run the following command on a powershell terminal
- with elevated privileges to check if it's already installed:
+with elevated privileges to check if it's already installed:
 
 ```powershell
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
@@ -371,4 +371,14 @@ To enable autocomplete for kubectl, run the following command:
 
 ```powershell
 kubectl completion powershell | Out-String | Invoke-Expression
+```
+
+This command will regenerate the auto-completion script on every PowerShell
+start up. You can also add the generated script directly to your $PROFILE file.
+
+To add the generated script to your $PROFILE file, run the following line in
+your powershell prompt:
+
+```powershell
+kubectl completion powershell >> $PROFILE
 ```
