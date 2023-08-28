@@ -27,6 +27,7 @@ the prod environment. Prod access could be considered on a temporary basis
 when investigating specific issues.
 
 The roles we are utilising are
+
 - **Azure Kubernetes Service RBAC Admin**- this role lets you manage all
 resources under cluster/namespace, except update or delete resource quotas
 and namespaces.
@@ -58,7 +59,9 @@ respectively for development, test and production environments.
 An example therefore for north europe development environment cluster is
 therefore
 
-*compute-aks-ne-dev-k8s*
+```bash
+compute-aks-ne-dev-k8s
+```
 
 These clusters are located in the Azure Resource group with the naming
 convention of
@@ -70,14 +73,16 @@ compute-REGION-ENV
 REGION and ENV tokens are the same as above. An example for north europe
 development environment resource group is therefore
 
-*compute-ne-dev*
+```bash	
+compute-ne-dev
+```
 
-All these clusters including their resource groups are visible to you in
-Azure portal as well.
+All these clusters including their resource groups are visible to you in Azure portal as well.
 
 ## Client machine setup
 
 Several tools are needed to access the cluster/Azure. These are:
+
  - Azure CLI - [windows installer](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
  - kubectl - [installer](https://kubernetes.io/docs/tasks/tools/)
 
@@ -105,7 +110,7 @@ az account set --subscription {subscriptionName}
 *{subscriptionName}* is the name of the subscription you want to use. For
 **dev** and **test** environment, this is *uniphar-dev*, **production** is *uniphar-prod*.
 
-To access Azure portal, browse to https://portal.azure.com and log in with
+To access Azure portal, browse to <https://portal.azure.com> and log in with
 your uniphar account.
 
 ### Kubernetes login
@@ -120,7 +125,9 @@ az aks get-credentials --resource-group {resourceGroupName} --name {clusterName}
 so an example is for north europe development environment cluster is
 therefore (this uses abbreviated parameter names)
 
-*az aks get-credentials -n compute-aks-ne-dev-k8s -g compute-ne-dev*
+```bash	
+az aks get-credentials -n compute-aks-ne-dev-k8s -g compute-ne-dev
+```
 
 This projects cluster config into kube config file and thus enables
 standard K8 tooling such as kubectl. Its documentation is located
@@ -132,11 +139,12 @@ to a pod etc. Same applies to helm tooling - e.g. running helm charts against th
 #### kubelogin
 
 With additional tooling provided by MS, you can project your current az
-cli token into kube config file and access the cluster without having to re-login.
+cli token into kube config file and access the cluster without
+having to re-login.
 
 The specific documentation - usage-  is located [here](https://azure.github.io/kubelogin/concepts/login-modes/azurecli.html#usage-examples).
 Kubelogin is available for install - please follow the instructions
-[here](https://azure.github.io/kubelogin/install.html). 
+[here](https://azure.github.io/kubelogin/install.html).
 
 ## Ingress
 
@@ -170,6 +178,7 @@ under clear DNS backed URLs. With these DNS zones, we recommend using host name
 based ingress rules.
 
 For general access, we use the following DNS zones:
+
  - api.dev.uniphar.ie
  - api.test.uniphar.ie
  - api.uniphar.ie
