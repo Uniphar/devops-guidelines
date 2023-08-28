@@ -73,7 +73,7 @@ compute-REGION-ENV
 REGION and ENV tokens are the same as above. An example for north europe
 development environment resource group is therefore
 
-```bash	
+```bash
 compute-ne-dev
 ```
 
@@ -83,8 +83,8 @@ All these clusters including their resource groups are visible to you in Azure p
 
 Several tools are needed to access the cluster/Azure. These are:
 
- - Azure CLI - [windows installer](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
- - kubectl - [installer](https://kubernetes.io/docs/tasks/tools/)
+- Azure CLI - [windows installer](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
+- kubectl - [installer](https://kubernetes.io/docs/tasks/tools/)
 
 Please use your favorite tooling to install these (e.g. chocolatey, scoop, etc)
 or use the links supplied in the list.
@@ -125,7 +125,7 @@ az aks get-credentials --resource-group {resourceGroupName} --name {clusterName}
 so an example is for north europe development environment cluster is
 therefore (this uses abbreviated parameter names)
 
-```bash	
+```bash
 az aks get-credentials -n compute-aks-ne-dev-k8s -g compute-ne-dev
 ```
 
@@ -134,7 +134,7 @@ standard K8 tooling such as kubectl. Its documentation is located
 [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands).
 With kubectl, you can perform wide range of actions against AKS cluster
 including creating/deleting deployments, accessing pod logs, port-forwarding
-to a pod etc. Same applies to helm tooling - e.g. running helm charts against the cluster.
+to a pod etc. Same applies to helm tooling e.g. running helm charts against the cluster.
 
 #### kubelogin
 
@@ -179,9 +179,9 @@ based ingress rules.
 
 For general access, we use the following DNS zones:
 
- - api.dev.uniphar.ie
- - api.test.uniphar.ie
- - api.uniphar.ie
+- api.dev.uniphar.ie
+- api.test.uniphar.ie
+- api.uniphar.ie
 
 For specific needs, we can create additional DNS zones. Please contact us
 for more information.
