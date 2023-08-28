@@ -77,7 +77,8 @@ development environment resource group is therefore
 compute-ne-dev
 ```
 
-All these clusters including their resource groups are visible to you in Azure portal as well.
+All these clusters including their resource groups are visible to you in Azure
+portal as well.
 
 ## Client machine setup
 
