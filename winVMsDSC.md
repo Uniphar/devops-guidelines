@@ -19,7 +19,7 @@ For further technical information about DSC, please refer to
 
 1. DSC script is developed via its dedicated repository and CI/CD. It gets
 published to a dedicated Azure Automation Account (AA) resource.
-   1. Each script must be imported (*Import-AzAutomationDscConfiguration*)
+   - Each script must be imported (*Import-AzAutomationDscConfiguration*)
 and compiled (*Start-AzAutomationDscCompilationJob*). You can use
 ( *Get-AzAutomationDscCompilationJob*) to wait for the compilation job
 to finish.

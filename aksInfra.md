@@ -1,16 +1,16 @@
 # Access to Uniphar AKS infrastructure/applications
 
-This document covers details of how to access Uniphar AKS infrastructure and
- applications running on it. It is intended for developers and support staff
- who need to access the infrastructure and applications running on it. It is
- not intended for end users of the applications.
+This section covers details of how to access Uniphar AKS infrastructure and
+applications running on it. It is intended for developers and staff who need to
+access the infrastructure and applications running on it. It is not intended for
+end users of the applications.
 
 ## Login to AKS cluster
 
-When provisioning access to AKS, we aim to provide minimum permissions
-required to perform the task at hand. This is especially the case when
-provisioning access to external users. This means that the user will not have
-access to all namespaces in the cluster.
+When provisioning access to AKS, we go by the principle of least priviledge and
+aim to provide minimum permissionsrequired to perform the task at hand. This is
+especially the case when provisioning access to external users (vendors).
+This means that the user will not have access to all namespaces in the cluster.
 
 Each business/technical domain is provisioned with a separate namespace.
 This namespace is then used to deploy applications pertaining to that
@@ -40,8 +40,8 @@ log analytics workspaces
 
 Our AKS infrastructure is provisioned in the following way:
 
-each environment contains of two regions - north europe and west europe.
-This may change.
+Each environment contains of two regions - north europe and west europe.
+> Currently, this may change in the future.
 
 We also use specific naming convention for AKS clusters. The template for
 the name is
@@ -86,6 +86,7 @@ Several tools are needed to access the cluster/Azure. These are:
 
 - Azure CLI - [windows installer](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
 - kubectl - [installer](https://kubernetes.io/docs/tasks/tools/)
+- Azure kubelogin - [installation](https://azure.github.io/kubelogin/install.html)
 
 Please use your favorite tooling to install these (e.g. chocolatey, scoop, etc)
 or use the links supplied in the list.
@@ -159,7 +160,8 @@ and failover.
 
 So the flow is as follows:
 
-**Client**-->**FrontDoor**-->**Application Gateway**-->**Ingress Controller**-->**Service**-->**Pod**
+**Client** --> **FrontDoor** --> **Application Gateway** -->
+**Ingress Controller** --> **Service** --> **Pod**
 
 An example of Application Gateway ingress resource is located [here](https://raw.githubusercontent.com/Azure/application-gateway-kubernetes-ingress/master/docs/examples/aspnetapp.yaml).
 
