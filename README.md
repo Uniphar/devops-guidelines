@@ -382,3 +382,9 @@ your powershell prompt:
 ```powershell
 kubectl completion powershell >> $PROFILE
 ```
+
+## Linked Documentation
+
+Developer/SI Access to Uniphar AKS infrastructure - [here](./aksInfra.md)
+
+Windows DSC overview - [here](./winVMsDSC.md)
