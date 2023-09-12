@@ -1,5 +1,15 @@
 # Devops Guidelines
 
+## Linked Documentation
+
+[Developer/SI Access to Uniphar AKS infrastructure](./aksInfra.md)
+
+[Windows DSC overview](./winVMsDSC.md)
+
+[DevOps Service Models](./service_models.md)
+
+## Introduction
+
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
 The technical stack and tooling is around that expected for an Azure
 execution and we do not use any cloud agnostic tools like Terraform because we
@@ -382,9 +392,3 @@ your powershell prompt:
 ```powershell
 kubectl completion powershell >> $PROFILE
 ```
-
-## Linked Documentation
-
-Developer/SI Access to Uniphar AKS infrastructure - [here](./aksInfra.md)
-
-Windows DSC overview - [here](./winVMsDSC.md)
