@@ -457,3 +457,13 @@ if needed run:
 ```powershell
 Add-PoshGitToProfile
 ```
+
+#### Global Git Ignore
+
+To setup a global ignore file, for example, to ignore .vscode folder
+run the following command:
+
+```powershell
+git config --global core.excludesFile "$Env:USERPROFILE\.gitignore"
+echo "**/.vscode" >> "$Env:USERPROFILE\.gitignore"
+```
