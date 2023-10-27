@@ -324,9 +324,25 @@ code --install-extension vsls-contrib.codetour
 ## Windows Subsystem for Linux
 
 Follow the steps on
-[Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/powershell/scripting/developer/windows-powershell)
+[Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 to install WSL2.
 If you're not used to a distribution, one of the most used is Ubuntu.
+
+```powershell
+wsl --install -d Ubuntu-22.04
+wsl --update
+wsl --shutdown
+```
+
+Additionally, after installing Ubuntu, you can run the following on the commands
+to update it to the latest version:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+The former commands will install Ubuntu 22.04 and update it to the latest version
+and restart wsl.
 
 ## Docker Desktop
 
@@ -391,4 +407,53 @@ your powershell prompt:
 
 ```powershell
 kubectl completion powershell >> $PROFILE
+```
+
+#### Helm Autocomplete
+
+To enable autocomplete for Helm, run the following command:
+
+This command will regenerate the auto-completion script on every PowerShell
+start up. You can also add the generated script directly to your $PROFILE file.
+
+To add the generated script to your $PROFILE file, run the following line in
+your powershell prompt:
+
+```powershell
+helm completion powershell >> $PROFILE
+```
+
+#### Git Config
+
+To configure git, run the following commands:
+
+```powershell
+git config --global user.email "your.email@domain.com"
+git config --global user.name "Your name"
+
+git config --global push.default current
+```
+
+If you want to use Vs Code as a default editor, run the following command:
+
+```powershell
+git config --global core.editor "code --wait"
+```
+
+#### Posh Git
+
+[Git in Powershell](https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell)
+
+To install posh git, run the following command:
+
+```powershell
+Update-Module PowerShellGet -Force
+Install-Module Posh-Git -Scope LocalMachine
+Install-Module posh-git -Scope LocalMachine
+```
+
+if needed run:
+
+```powershell
+Add-PoshGitToProfile
 ```
