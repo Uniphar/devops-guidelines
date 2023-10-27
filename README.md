@@ -439,3 +439,21 @@ If you want to use Vs Code as a default editor, run the following command:
 ```powershell
 git config --global core.editor "code --wait"
 ```
+
+#### Posh Git
+
+[Git in Powershell](https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell)
+
+To install posh git, run the following command:
+
+```powershell
+Update-Module PowerShellGet -Force
+Install-Module Posh-Git -Scope LocalMachine
+Install-Module posh-git -Scope LocalMachine
+```
+
+if needed run:
+
+```powershell
+Add-PoshGitToProfile
+```
