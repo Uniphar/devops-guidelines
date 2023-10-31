@@ -12,7 +12,7 @@ You can get the latest version of the Azure VPN client application from any of t
 
 The more convenient way to setup the VPN client is to import the VPN client profile configuration file. This file contains all the information needed to connect to the VPN gateway.
 
-**Please request the profile configuration xml file from the DevOps team** for the environment to which you require access to.
+**Please request the profile configuration xml file from the DevOps team** for the environment to which you require access.
 
 After you have aqquired the profile configuration file, you can import it into the VPN client application by following these steps:
 
