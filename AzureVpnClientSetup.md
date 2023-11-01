@@ -14,7 +14,7 @@ The more convenient way to setup the VPN client is to import the VPN client prof
 
 **Please request the profile configuration xml file from the DevOps team** for the environment to which you require access.
 
-After you have aqquired the profile configuration file, you can import it into the VPN client application by following these steps:
+After you have acquired the profile configuration file, you can import it into the VPN client application by following these steps:
 
 ### 1. On the Azure VPN client application, select the **Import** option on the bottom left.
 
