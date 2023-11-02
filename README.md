@@ -8,6 +8,8 @@
 
 [DevOps Service Models](./service_models.md)
 
+[Azure VPN Client Setup](./AzureVpnClientSetup.md)
+
 ## Introduction
 
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
