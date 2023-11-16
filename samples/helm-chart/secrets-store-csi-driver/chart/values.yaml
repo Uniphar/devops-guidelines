@@ -1,0 +1,39 @@
+replicaCount: 1
+
+appName: demo-app
+
+CSI:
+  volumeName: "secrets-store-demo-app"
+  ProviderClassName: "devops-azure-kv-provider-demo-app"
+  kvName: "<< from command line >>"
+
+image:
+  repository: "<< from command line >>"
+  tag: "latest"
+
+resources:
+  requests:
+    memory: "1Gi"
+  limits:
+    memory: "1Gi"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+nodePool: "<< from command line >>"
+
+kvSecrets:
+  secretA:
+    kvName: NAME--FOR--SECRET--A--FROM--KEYVAULT
+    k8Name: secret-name-for-a-if-k8s-secrets-are-used
+    envName: SECRET_NAME_FOR_A_IF_ENV_VARIABLES_ARE_USED
+  secretB:
+    kvName: NAME--FOR--SECRET--B--FROM--KEYVAULT
+    k8Name: secret-name-for-b-if-k8s-secrets-are-used
+    envName: SECRET_NAME_FOR_B_IF_ENV_VARIABLES_ARE_USED
+
+serviceAccount:
+  name: "<< from command line >>"
+  clientId: "<< from command line >>"
+  tenantId: "<< from command line >>"

@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        azure.workload.identity/use: "true"
+        app: {{ .Values.appName }}
+        date: "{{ now | unixEpoch }}"
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name }} 
+      containers:
+        - image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
+          imagePullPolicy: Always
+          name: {{ .Values.appName }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            {{- range $kvsecret := .Values.kvSecrets }}
+            - name: {{ $kvsecret.envName }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ $kvsecret.k8Name }}
+                  key: {{  $kvsecret.kvName }}              
+            {{- end }}
+          envFrom:
+            - configMapRef:
+                name: app-demo-configmap
+          volumeMounts:
+            - name: {{ .Values.CSI.volumeName }}
+              mountPath: "/mnt/secrets-store"
+              readOnly: true
+          ports:
+            - containerPort: {{ .Values.service.port }}
+      volumes:
+      - name: {{ .Values.CSI.volumeName }}
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: {{ .Values.CSI.ProviderClassName }}
+      restartPolicy: Always
+      nodeSelector:
+        agentpool: {{ .Values.nodePool }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.appName }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      
+  selector:
+    app: {{ .Values.appName }}
