@@ -23,30 +23,28 @@ spec:
           name: {{ .Values.appName }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          env:
-            {{- range $kvsecret := .Values.kvSecrets }}
-            - name: {{ $kvsecret.envName }}
-              valueFrom:
-                secretKeyRef:
-                  name: {{ $kvsecret.k8Name }}
-                  key: {{  $kvsecret.kvName }}              
-            {{- end }}
           envFrom:
             - configMapRef:
-                name: app-demo-configmap
+                name: demo-app-configmap
           volumeMounts:
-            - name: {{ .Values.CSI.volumeName }}
+            - name: demo-app-secrets-store
               mountPath: "/mnt/secrets-store"
               readOnly: true
+          volumeMounts:
+            - name: persistent-storage
+              mountPath: "/mnt/azurefile"
           ports:
             - containerPort: {{ .Values.service.port }}
       volumes:
-      - name: {{ .Values.CSI.volumeName }}
+      - name: demo-app-secrets-store
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: {{ .Values.CSI.ProviderClassName }}
+            secretProviderClass: {{ .Values.CSI.name }}
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: {{ .Values.storage.pvcName }}
       restartPolicy: Always
       nodeSelector:
         agentpool: {{ .Values.nodePool }}
@@ -55,13 +53,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Values.appName }}
-  labels:
-    app: {{ .Values.appName }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
-    - protocol: TCP
-      port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.port }}
-      
+  - port: {{ .Values.service.port }}
   selector:
     app: {{ .Values.appName }}
+
+

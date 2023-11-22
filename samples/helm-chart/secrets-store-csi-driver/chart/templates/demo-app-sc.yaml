@@ -1,0 +1,24 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ .Values.storage.storageClassName }}
+provisioner: file.csi.azure.com
+allowVolumeExpansion: true
+parameters:
+  resourceGroup: {{ .Values.storage.resourceGroup }}
+  storageAccount: {{ .Values.storage.storageAccount }}
+  shareName: {{ .Values.storage.shareName }}
+  protocol: {{ .Values.storage.protocol }}
+  server: {{ .Values.storage.server }}
+  secretName: {{ .Values.storage.secretName }}
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=0
+  - gid=0
+  - mfsymlinks
+  - cache=strict  # https://linux.die.net/man/8/mount.cifs
+  - nosharesock  # reduce probability of reconnect race
+  - actimeo=30  # reduce latency for metadata-heavy workload

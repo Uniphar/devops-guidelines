@@ -1,4 +1,3 @@
-[CmdletBinding(SupportsShouldProcess)]
 param (
     [parameter(Mandatory = $true)]
     [string] $TenantId,
@@ -8,6 +7,9 @@ param (
 
     [parameter(Mandatory = $true)]
     [string] $ResourceGroup,
+
+    [parameter(Mandatory = $true)]
+    [string] $HostName,
 
     [parameter(Mandatory = $true)]
     [string] $ClusterName,
@@ -25,7 +27,19 @@ param (
     [string] $AzureADWorkLoadIdentityName,
 
     [parameter(Mandatory = $true)]
-    [string] $KeyVaultName
+    [string] $KeyVaultName,
+
+    [parameter(Mandatory = $true)]
+    [string] $StorageResourceGroup,
+
+    [parameter(Mandatory = $true)]
+    [string] $StorageStorageAccount,
+
+    [parameter(Mandatory = $true)]
+    [string] $StorageShareName,
+
+    [parameter(Mandatory = $true)]
+    [string] $StorageServer
 
 )
 
@@ -36,8 +50,6 @@ if (!(Get-Module -Name "powershell-yaml" -ListAvailable)) {
 az account set --subscription $SubscriptionId
 az aks get-credentials --resource-group $ResourceGroup --name $ClusterName
 kubelogin convert-kubeconfig -l azurecli
-
-$PSScriptRoot
 
 $chartRootDirectory = Join-Path $PSScriptRoot "chart"
 $APP_HELM_VERSION = "1.0.$((Get-Date).ticks)"
@@ -54,9 +66,14 @@ helm upgrade $applicationName "./$applicationName-$APP_HELM_VERSION.tgz" -n $Nam
                                 --set serviceAccount.tenantId=$TenantId `
                                 --set serviceAccount.name=$AzureADWorkLoadIdentityName `
                                 --set serviceAccount.clientId=$serviceAccountClientId `
+                                --set ingress.hostName=$HostName `
                                 --set CSI.kvName=$KeyVaultName `
                                 --set image.repository=$ImageRepository `
                                 --set nodePool=$NodePool `
+                                --set storage.resourceGroup=$StorageResourceGroup `
+                                --set storage.storageAccount=$StorageStorageAccount `
+                                --set storage.shareName=$StorageShareName `
+                                --set storage.server=$StorageServer `
                                 --atomic
 
 Pop-Location

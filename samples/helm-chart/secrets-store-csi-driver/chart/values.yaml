@@ -1,10 +1,10 @@
 replicaCount: 1
 
 appName: demo-app
+configMapName: demo-app-configmap
 
 CSI:
-  volumeName: "secrets-store-demo-app"
-  ProviderClassName: "devops-azure-kv-provider-demo-app"
+  name: demo-app-kv-provider
   kvName: "<< from command line >>"
 
 image:
@@ -19,7 +19,11 @@ resources:
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
+
+ingress:
+  hostName: "<< from command line >>"
+  secret: demo-app-tls-secret
 
 nodePool: "<< from command line >>"
 
@@ -37,3 +41,13 @@ serviceAccount:
   name: "<< from command line >>"
   clientId: "<< from command line >>"
   tenantId: "<< from command line >>"
+
+storage:
+  storageClassName: demo-app-sc
+  pvcName: demo-app-pvc
+  resourceGroup: "<< from command line >>"
+  storageAccount: "<< from command line >>"
+  shareName: "<< from command line >>"
+  protocol: smb
+  server: "<< from command line >>"
+  secretName: demo-app-storage-account-secret
