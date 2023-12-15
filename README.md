@@ -10,6 +10,8 @@
 
 [Azure VPN Client Setup](./AzureVpnClientSetup.md)
 
+[Azure DNS Private Resolver as local DNS Server Setup Guide](./DnsResolverLocalSetupGuide.md)
+
 ## Introduction
 
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
