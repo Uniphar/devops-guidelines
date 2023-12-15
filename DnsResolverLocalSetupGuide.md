@@ -81,14 +81,15 @@ on this subject.
 
 ## Possible Issues
 
-If you run the script before connecting to the Azure VPN, DNS resolution will
-not work. You will need to run the script again after connecting to the VPN.
+The script to change the local DNS server IP address will only work if it is
+executed after you have connected to the Azure VPN.
 
-This is because you need DNS resolution in order to successfuly connect to the
-VPN, and since the Azure DNS Private Resolver is in the Azure network, it is not
-accessible until you connect to the VPN. The Azure VPN client application may
-be showing `"connected"`, but if you try to run `Test-NetConnection` to
-resource in the Azure network, it will fail.
+If you run the script before connecting to the Azure VPN, DNS resolution will
+not work. This is because you need DNS resolution in order to successfuly
+connect to the VPN, and since the Azure DNS Private Resolver is in the Azure
+network, it is not accessible until you connect to the VPN. The Azure VPN client
+application may be showing `"connected"`, but if you try to run
+`Test-NetConnection` to resource in the Azure network, it will fail.
 
 To fix this, you can try following these steps:
 
@@ -96,7 +97,7 @@ To fix this, you can try following these steps:
 2. Run the script again with the `-Reset` switch (see step 4).
 3. Connect to the Azure VPN.
 4. Run the script again with the environment parameter (see step 2).
-5. Retest DNS resolution.
+5. Re-test DNS resolution.
 
 If you are still having issues, try restarting your computer and following the
 steps again.
