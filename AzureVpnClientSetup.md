@@ -1,5 +1,10 @@
 # Configure the Azure VPN client
 
+## Pre-requisites
+
+Make sure you have been added to the **uni-sec-VPN_Users** group in Azure AD.
+If you haven't been added, please contact the DevOps team.
+
 ## Download and install the VPN client application
 
 You can get the latest version of the Azure VPN client application from any of
@@ -15,8 +20,14 @@ The more convenient way to setup the VPN client is to import the VPN client
 profile configuration file. This file contains all the information needed to
 connect to the VPN gateway.
 
-**Please request the profile configuration xml file from the DevOps team** for
-the environment to which you require access.
+These profile configuration files are XML files can be found by navigating to
+`\\unicoreplatform.file.core.windows.net\vpnxmls` in file explorer. If you have
+correctly been added to the Azure VPN Users Entra ID Group, you should be able
+to access without being prompted to authenticate. If you are prompted to authenticate,
+please contact the TechOps team and confirm weather you are in the group.
+
+The file for each of the Azure Hub VPN gateways is inside the folder with the
+corresponding environment name.
 
 After you have acquired the profile configuration file, you can import it into
 the VPN client application by following these steps:
