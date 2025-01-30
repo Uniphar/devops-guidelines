@@ -2,8 +2,9 @@
 
 ## Pre-requisites
 
-Make sure you have been added to the [uni-sec-VPN_Users](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupDetailsMenuBlade/~/Overview/groupId/82ab6a21-ece0-4ac0-b411-67774c886ead/menuId/) group in Azure AD.
-If you haven't been added, please contact the DevOps team.
+Make sure you have been added to the
+[uni-sec-VPN_Users](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupDetailsMenuBlade/~/Overview/groupId/82ab6a21-ece0-4ac0-b411-67774c886ead/menuId/)
+group in Azure AD. If you haven't been added, please contact the DevOps team.
 
 ## Download and install the VPN client application
 
@@ -23,8 +24,8 @@ connect to the VPN gateway.
 These profile configuration files are XML files that can be found by navigating to
 `\\unicoreplatform.file.core.windows.net\vpnxmls` in file explorer. If you have
 correctly been added to the Azure VPN Users Entra ID Group, you should be able
-to access the files without being prompted to authenticate. You may need to wait for
-your group membership to propagate, but if after an hour you still cannot
+to access the files without being prompted to authenticate. You may need to wait
+for your group membership to propagate, but if after an hour you still cannot
 access the share, please contact the TechOps team and confirm weather you are in
 the group.
 
