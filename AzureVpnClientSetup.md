@@ -23,7 +23,7 @@ connect to the VPN gateway.
 These profile configuration files are XML files can be found by navigating to
 `\\unicoreplatform.file.core.windows.net\vpnxmls` in file explorer. If you have
 correctly been added to the Azure VPN Users Entra ID Group, you should be able
-to access without being prompted to authenticate. If you are prompted to authenticate,
+to access the files without being prompted to authenticate. If you are prompted to authenticate,
 please contact the TechOps team and confirm weather you are in the group.
 
 The file for each of the Azure Hub VPN gateways is inside the folder with the
