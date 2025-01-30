@@ -20,7 +20,7 @@ The more convenient way to setup the VPN client is to import the VPN client
 profile configuration file. This file contains all the information needed to
 connect to the VPN gateway.
 
-These profile configuration files are XML files can be found by navigating to
+These profile configuration files are XML files that can be found by navigating to
 `\\unicoreplatform.file.core.windows.net\vpnxmls` in file explorer. If you have
 correctly been added to the Azure VPN Users Entra ID Group, you should be able
 to access the files without being prompted to authenticate. If you are prompted to authenticate,
