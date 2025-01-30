@@ -2,7 +2,7 @@
 
 ## Pre-requisites
 
-Make sure you have been added to the **uni-sec-VPN_Users** group in Azure AD.
+Make sure you have been added to the [uni-sec-VPN_Users](https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupDetailsMenuBlade/~/Overview/groupId/82ab6a21-ece0-4ac0-b411-67774c886ead/menuId/) group in Azure AD.
 If you haven't been added, please contact the DevOps team.
 
 ## Download and install the VPN client application
