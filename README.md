@@ -12,6 +12,8 @@
 
 [Azure DNS Private Resolver as local DNS Server Setup Guide](./DnsResolverLocalSetupGuide.md)
 
+[Acquiring Web API Tokens](./WebApiTokens.md)
+
 ## Introduction
 
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
