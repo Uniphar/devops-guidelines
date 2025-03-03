@@ -22,8 +22,6 @@ Below are the steps to acquire a token using both `curl` and PowerShell.
    4. `TARGET_SCOPE`
 3. The response will contain the access token.
 
-#### For Azure AD B2C Tenant
-
 ```sh
 # Acquiring tokens using CIAM Endpoint
 curl -X POST https://TENANT_ID.ciamlogin.com/TENANT_ID/oauth2/v2.0/token \
