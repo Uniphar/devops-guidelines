@@ -22,8 +22,17 @@ Below are the steps to acquire a token using both `curl` and PowerShell.
    4. `TARGET_SCOPE`
 3. The response will contain the access token.
 
+#### For Azure AD B2C Tenant
+
 ```sh
+# Acquiring tokens using CIAM Endpoint
 curl -X POST https://TENANT_ID.ciamlogin.com/TENANT_ID/oauth2/v2.0/token \
+        -H "Content-Type: application/x-www-form-urlencoded" \
+        -d "grant_type=client_credentials&client_id=NEW_APP_CLIENT_ID&client_secret=NEW_APP_CLIENT_SECRET&scope=TARGET_SCOPE"
+
+
+# Acquiring tokens using Standard EntraID Endpoint
+curl -X POST https://login.microsoftonline.com/TENANT_ID/oauth2/v2.0/token \
         -H "Content-Type: application/x-www-form-urlencoded" \
         -d "grant_type=client_credentials&client_id=NEW_APP_CLIENT_ID&client_secret=NEW_APP_CLIENT_SECRET&scope=TARGET_SCOPE"
 ```
@@ -49,7 +58,12 @@ $body = @{
     scope         = $scope
 }
 
+# CIAM Token Endpoint
 $uri = "https://$tenantId.ciamlogin.com/$tenantId/oauth2/v2.0/token"
+
+# Standard EntraID Token Endpoint
+# $uri = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token"
+
 $response = Invoke-RestMethod `
                 -Method Post `
                 -Uri $uri `
@@ -140,7 +154,7 @@ They define what resources and operations the token holder is allowed to access.
 When requesting a token, you specify the desired scopes in the scope parameter.
 
 For example, if you want to access a specific API,
-you might request a scope like api://YOUR_API_ID/.default.
+you might request a scope like `api://YOUR_API_ID/.default`.
 The API will then check the scopes included in the token
 to determine if the request is authorized.
 
@@ -148,14 +162,20 @@ to determine if the request is authorized.
 
 - *User.Read*: Allows reading the profile of the signed-in user.
 - *Mail.Send*: Allows sending mail as the signed-in user.
-- api://YOUR_API_ID/.default: default permissions for the specified API access.
+- *api://YOUR_API_ID/.default*: default permissions for the specified API access.
 
 #### Example Token Request with Scopes
 
 Using `curl`:
 
 ```sh
+# Acquiring tokens using CIAM Endpoint
 curl -X POST https://TENANT_ID.ciamlogin.com/TENANT_ID/oauth2/v2.0/token \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d "grant_type=client_credentials&client_id=NEW_APP_CLIENT_ID&client_secret=NEW_APP_CLIENT_SECRET&scope=api://YOUR_API_ID/.default"
+
+# Acquiring tokens using Standard EntraID Endpoint
+curl -X POST https://login.microsoftonline.com/TENANT_ID/oauth2/v2.0/token \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "grant_type=client_credentials&client_id=NEW_APP_CLIENT_ID&client_secret=NEW_APP_CLIENT_SECRET&scope=api://YOUR_API_ID/.default"
 ```
@@ -175,7 +195,11 @@ $body = @{
     scope         = $scope
 }
 
+# CIAM Token Endpoint
 $uri = "https://$tenantId.ciamlogin.com/$tenantId/oauth2/v2.0/token"
+
+# Standard EntraID Token Endpoint
+# $uri = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token"
 
 $response = Invoke-RestMethod `
                 -Method Post `
