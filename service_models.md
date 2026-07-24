@@ -62,7 +62,7 @@ will manage the installation of the software. However the vendor will own the
 servers and will be responsible for any observability or alerting related to the
 proper function of the servers applications.
 
-Part of the infrastructure project will be backups and restores will be done by
+Backups are part of the infrastructure project and restores will also be done by
 Platform.
 
 The only task that Platform will do in this scenario is to rebuild the infrastructure

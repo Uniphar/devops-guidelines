@@ -21,7 +21,7 @@ please refer to the [Azure VPN Client Setup Guide](./AzureVpnClientSetup.md).
 
 ## Step 2: Change Local DNS Server IP Address
 
-The Platform team have prepared a PowerShell script that takes an environment as
+The Platform team has prepared a PowerShell script that takes an environment as
 the input and sets up the Azure DNS Private Resolver for that environment as
 your local DNS server.
 

@@ -25,7 +25,7 @@ design infrastructure specifically to maximize performance and cost optimization
 in Azure.
 
 This document goes through the list of tools, technologies, processes and
-principles to we use in Platform within the Uniphar group and should be used as
+principles we use in Platform within the Uniphar group and should be used as
 a reference to what is expected to be seen on the internal repositories that
 contain final Platform infrastructure as code.
 
@@ -210,7 +210,7 @@ away:
 
 ## CI/CD pipelines
 
-Platform code is deployed through [github actions](https://docs.github.com/en/actions),
+Platform code is deployed through [GitHub Actions](https://docs.github.com/en/actions),
 using yaml workflows. We run a CI workflow that mostly calls initialization
 blocks using `-WhatIf`, that internally run sets of `Test-AzResourceGroupDeployment`.
 

@@ -2,15 +2,15 @@
 
 ## Overview
 
-Uniphar has built a series of configurable components that allown us to send
+Uniphar has built a series of configurable components that allow us to send
 events for SAP transactions to Service Bus, so that other consumers can act on
 these events without having to pool the SAP systems.
 
 ## ABAP SAP module - Eventing Framework
 
 At the core of these components we have a custom ABAP framework that listens to
-pre-configured SAP transactions (from a configuration table) and produces a ServiceBus
-message with customizable payloads (from another configuration table).
+pre-configured SAP transactions (from a configuration table) and produces a Service
+Bus message with customizable payloads (from another configuration table).
 
 To facilitate consumption of these events, this framework has configurable message
 headers that are also duplicated in the payload, but they facilitate the creation
@@ -52,7 +52,7 @@ of SQL filters when subscribing to topics that have these SAP events.
 ```
 
 The JSON properties at the root level of the message are also sent as message headers
-as a list of key value pairs.
+as a list of key-value pairs.
 
 ![alt text](img/message_properties.png)
 
@@ -72,10 +72,10 @@ as message headers so that SQL filters can be created easily on the topic subscr
 
 ## Large Message Payloads
 
-Some events will be to large to send to the Topic with their full payload. When
+Some events will be too large to send to the Topic with their full payload. When
 the eventing framework receives an `413: Entity too large` status code from the
 Service Bus, it will strip out all arrays in the `data` object, set them to `null`
-and add an aditional header to the message `blobUri`. This header will contain
+and add an additional header to the message `blobUri`. This header will contain
 the full URI for a JSON blob that contains the full payload.
 
 ### Example Large Message stripped
@@ -87,7 +87,7 @@ having the full `toItem` array in the message payload, we now set it to `null`.
 [
     {
         "id": "49EA52982CA61FD19F8944D68BCA15C4",
-        "blobUri": "https://unidawntest.blob.core.windows.net/ibp/MB52_01042026.json"
+        "blobUri": "https://unidawntest.blob.core.windows.net/ibp/MB52_01042026.json",
         "objectKey": "0800076861",
         "objectType": "OUTBOUNDDELIVERY",
         "system": "STS",
