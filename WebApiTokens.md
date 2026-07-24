@@ -212,7 +212,8 @@ $response.access_token
 
 ## Contact
 
-For further assistance, please contact the DevOps Team. They can help with the following:
+For further assistance, please contact the Platform Team. They can help with the
+following:
 
 - Setting up API and/or API client applications and managing secrets.
 - Configuring and providing the necessary API scopes.
