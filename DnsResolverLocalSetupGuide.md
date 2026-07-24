@@ -9,7 +9,7 @@ It also addresses possible issues and provides troubleshooting steps.
 The document assumes you have admin rights on your local machine and that you
 have the Azure VPN client installed and configured. If you do not have the Azure
 VPN client installed and configured, please refer to the
-[Azure VPN Client Setup Guide](C:\Users\dbraga\Documents\Uniphar\repos\devops-guidelines\AzureVpnClientSetup.md)
+[Azure VPN Client Setup Guide](./AzureVpnClientSetup.md)
 
 ## Step 1: Connect to Azure VPN
 
@@ -17,11 +17,11 @@ Before you can use the Azure DNS Private Resolver, you must connect to the
 Azure VPN.
 
 For more detailed instructions on how to setup and connect to the Azure VPN,
-please refer to the [Azure VPN Client Setup Guide](C:\Users\dbraga\Documents\Uniphar\repos\devops-guidelines\AzureVpnClientSetup.md).
+please refer to the [Azure VPN Client Setup Guide](./AzureVpnClientSetup.md).
 
 ## Step 2: Change Local DNS Server IP Address
 
-The DevOps team have prepared a PowerShell script that takes an environment as
+The Platform team have prepared a PowerShell script that takes an environment as
 the input and sets up the Azure DNS Private Resolver for that environment as
 your local DNS server.
 
@@ -75,7 +75,7 @@ Once you've finished setting up your DNS, you can disconnect from the Azure VPN.
 Remember to test your new DNS settings to ensure everything is working as expected.
 
 For more information on how to use the Azure VPN client, please refer to the
-[Azure VPN Client Setup Guide](C:\Users\dbraga\Documents\Uniphar\repos\devops-guidelines\AzureVpnClientSetup.md)
+[Azure VPN Client Setup Guide](./AzureVpnClientSetup.md)
 or the [Microsoft Documentation](https://learn.microsoft.com/en-us/azure/vpn-gateway/openvpn-azure-ad-client)
 on this subject.
 

@@ -1,4 +1,4 @@
-# Devops Guidelines
+# Platform Guidelines
 
 ## Linked Documentation
 
@@ -6,13 +6,15 @@
 
 [Windows DSC overview](./winVMsDSC.md)
 
-[DevOps Service Models](./service_models.md)
+[Platform Service Models](./service_models.md)
 
 [Azure VPN Client Setup](./AzureVpnClientSetup.md)
 
 [Azure DNS Private Resolver as local DNS Server Setup Guide](./DnsResolverLocalSetupGuide.md)
 
 [Acquiring Web API Tokens](./WebApiTokens.md)
+
+[SAP Eventing Framework](./WebApiTokens.md)
 
 ## Introduction
 
@@ -23,9 +25,9 @@ design infrastructure specifically to maximize performance and cost optimization
 in Azure.
 
 This document goes through the list of tools, technologies, processes and
-principles to we use in DevOps within the Uniphar group and should be used as a
-reference to what is expected to be seen on the internal repositories that
-contain final DevOps infrastructure as code.
+principles to we use in Platform within the Uniphar group and should be used as
+a reference to what is expected to be seen on the internal repositories that
+contain final Platform infrastructure as code.
 
 **Note**
 If Installing from scratch, you might want to check the [Quick Setup](#quick-setup)
@@ -36,9 +38,9 @@ guide
 ### Code
 
 We use a mix of [PowerShell Core](https://github.com/PowerShell/PowerShell) using
-the [Az](https://www.powershellgallery.com/packages/Az/10.1.0) modules combined with
-[bicep](https://github.com/Azure/bicep) for the actual resource definition in
-Azure. We're no longer doing anything with
+the [Az](https://www.powershellgallery.com/packages/Az/10.1.0) modules combined
+with [bicep](https://github.com/Azure/bicep) for the actual resource definition
+in Azure. We're no longer doing anything with
 [ARM Templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)
 directly, instead everything is declared in the newer and much more readable
 [bicep](https://github.com/Azure/bicep) templates.
@@ -143,15 +145,15 @@ over the [Azure CLI](https://github.com/Azure/azure-cli), due to it's easier use
 through the PSObject stack as oposed to parsing JSON in the case of using the
 Azure CLI through PowerShell.
 
-## DevOps Principles
+## Platform Principles
 
 ### Infrastructure as Code
 
 Infrastructure as Code (IaC) is the management of infrastructure in a
-descriptive model, using the same versioning as DevOps team uses for source code.
+descriptive model, using the same versioning as Platform team uses for source code.
 Like the principle that the same source code generates the same binary, an IaC
 model generates the same environment every time it is applied. IaC is a key
-DevOps practice and is used in conjunction with continuous delivery, pull
+Platform practice and is used in conjunction with continuous delivery, pull
 requests and trunk based development.
 
 ### Build Measure Learn
@@ -176,10 +178,10 @@ This is a software development principle where developers align their
 applications to fail right away in a visible fashion in order to reduce the
 amount of hidden bugs over time.
 
-When applied to DevOps, we align our code base as a lean code base so that we
+When applied to Platform, we align our code base as a lean code base so that we
 run through iterations very quickly, either a new piece of infrastructure
 (new code) or changes to an existing one (refactoring/changing existing code),
-by keeping the code base lean and having all DevOps code under CI/CD, our cycle
+by keeping the code base lean and having all Platform code under CI/CD, our cycle
 to deploying to early environments is quite fast.
 
 ### Observe everything
@@ -208,15 +210,15 @@ away:
 
 ## CI/CD pipelines
 
-Devops code is deployed through [github actions](https://docs.github.com/en/actions),
+Platform code is deployed through [github actions](https://docs.github.com/en/actions),
 using yaml workflows. We run a CI workflow that mostly calls initialization
 blocks using `-WhatIf`, that internally run sets of `Test-AzResourceGroupDeployment`.
 
 > **TODO: Example pipeline**
 
-## DevOps project structure
+## Platform project structure
 
-Each DevOps project is structured as a PowerShell module, and every function
+Each Platform project is structured as a PowerShell module, and every function
 that is exported is documented, and in some cases functions that aren't exported
 are also documented. The module contains one manifest file `.psd1` and one
 module file `.psm1`.

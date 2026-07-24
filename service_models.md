@@ -1,9 +1,9 @@
-# DevOps Service Models
+# Platform Service Models
 
-## DevOps hosted
+## Platform hosted
 
 When projects adhere to the set of principles and technical stack that we use in
-the DevOps team, the project is fully owned by the DevOps team.
+the Platform team, the project is fully owned by the Platform team.
 
 For VM projects, these are VMs that are fully automated and orchestrated and
 that have no external access enabled, thus no human intervention on any
@@ -36,7 +36,7 @@ of the chosen Linux distribution.
 
 When automation projects are executed by vendors, they need conform to:
 
-- Coding standards and principles need to adhere to [Uniphar's DevOps Guidelines](./README.md).
+- Coding standards and principles need to adhere to [Uniphar's Platform Guidelines](./README.md).
 - All code developed for Uniphar will exists and be maintained in Uniphar owned
   github repositories. The intellectual property of this code is also owned by Uniphar.
 - All  version control, reporting, requirements management, project management,
@@ -44,8 +44,8 @@ When automation projects are executed by vendors, they need conform to:
   managed in line with Uniphar requirements.
 - All code produced may need to be peer reviewed by suitable Uniphar staff.
 - All configurations  may need to be peer reviewed by suitable Uniphar staff.
-- All software delivered will need to be accepted by the Uniphar Devops team, in
-  a format that aligns to our Devops strategy.
+- All software delivered will need to be accepted by the Uniphar Platform team,
+  in a format that aligns to our Platform strategy.
 - All tememetry will need to vonfirm to Uniphar standards and technical stack,
   or be agreed upfront.
 
@@ -62,7 +62,8 @@ will manage the installation of the software. However the vendor will own the
 servers and will be responsible for any observability or alerting related to the
 proper function of the servers applications.
 
-Part of the infrastructure project will be backups and restores will be done by DevOps.
+Part of the infrastructure project will be backups and restores will be done by
+Platform.
 
-The only task that DevOps will do in this scenario is to rebuild the infrastructure
+The only task that Platform will do in this scenario is to rebuild the infrastructure
 when required by the vendor.
