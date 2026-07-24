@@ -14,7 +14,7 @@
 
 [Acquiring Web API Tokens](./WebApiTokens.md)
 
-[SAP Eventing Framework](./WebApiTokens.md)
+[SAP Eventing Framework](./sap_eventing_framework.md)
 
 ## Introduction
 
