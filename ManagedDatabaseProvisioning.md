@@ -11,7 +11,7 @@ Pilot by using Kubernetes custom resources (CRDs).
   each Kubernetes context. For example, in DEV:
   `kubectl apply -n platform-data-pilot -f dev-database-crd.yaml`.
 3. Platform Data Pilot reads the CRD and creates or updates the database in
-  that environment.
+  the target environment. 
 
 ## Important notes
 
@@ -72,8 +72,8 @@ This is the Kubernetes namespace where the CRD exists.
 Platform Data Pilot uses this value to resolve where the database should be
 provisioned. It maps the namespace to:
 
-- SQL Server,
-- Elastic Pool,
+- SQL Server
+- Elastic Pool
 - Failover Group
 
 using the mapping CRD.
