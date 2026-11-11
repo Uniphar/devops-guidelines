@@ -11,7 +11,7 @@ Pilot by using Kubernetes custom resources (CRDs).
   each Kubernetes context. For example, in DEV:
   `kubectl apply -n platform-data-pilot -f dev-database-crd.yaml`.
 3. Platform Data Pilot reads the CRD and creates or updates the database in
-  the target environment. 
+  the target environment.
 
 ## Important notes
 
