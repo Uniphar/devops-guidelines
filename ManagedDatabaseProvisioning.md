@@ -15,8 +15,8 @@ Pilot by using Kubernetes custom resources (CRDs).
 
 ## Important notes
 
-1. Platform Data Pilot does not delete databases. Contact the Platform Infra Team for
-  help removing a database.
+1. Platform Data Pilot does not delete databases. Contact the Platform Infra Team
+  for help removing a database.
 2. Reapplying an unchanged database CRD does not trigger a database deployment
   or update. Changes to supported fields, such as `spec.maxSizeGB`, are
   applied.
