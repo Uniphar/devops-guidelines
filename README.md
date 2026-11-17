@@ -16,6 +16,8 @@
 
 [SAP Eventing Framework](./sap_eventing_framework.md)
 
+[Azure SQL Databases provisioning with Platform Data Pilot](./ManagedDatabaseProvisioning.md)
+
 ## Introduction
 
 The Uniphar Group targets the Azure cloud for most of the cloud workloads.
